@@ -3,7 +3,7 @@
 Dungeon crawler 3D en Unity 6000.3.21f1 (URP), con arquitectura MVC. Proyecto de la asignatura Tecnologías Inmersivas.
 
 * Plan y decisiones: [`docs/PLAN.md`](docs/PLAN.md)
-* Scripts de Blender para regenerar los modelos: `BlenderScripts/`
+* Scripts de Blender para regenerar los modelos: [`BlenderScripts/`](BlenderScripts/LEEME.md). Los `.blend` editables están en `BlenderModels/`.
 
 ## Pruebas del Modelo
 * **En Unity:** Window → General → Test Runner → EditMode → Run All.

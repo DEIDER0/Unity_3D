@@ -29,8 +29,8 @@ Dependencias en un solo sentido, impuestas por las asmdef:
 |---|---|---|
 | 0 | Base del proyecto: paquetes, carpetas, asmdefs y acciones de entrada | ✅ |
 | a | Modelo y pruebas unitarias | ✅ |
-| b | Modelos 3D en Blender (bpy), exportación a FBX e importación | ⏳ |
-| c | Jugador: movimiento, ataque y esquive | |
+| b | Modelos 3D en Blender (bpy), exportación a FBX e importación | ✅ |
+| c | Jugador: movimiento, ataque y esquive | ⏳ |
 | d | Enemigo básico con IA | |
 | e | Salas, puertas y RoomController | |
 | f | Cofre y recompensa | |
@@ -40,3 +40,8 @@ Dependencias en un solo sentido, impuestas por las asmdef:
 
 ## Fuera de alcance
 Multijugador, guardado de partida, generación aleatoria de salas, inventario complejo.
+
+## Modelos 3D
+Generados con `BlenderScripts/` (ver `BlenderScripts/LEEME.md`).
+
+![Modelos](previews/_todos.png)
