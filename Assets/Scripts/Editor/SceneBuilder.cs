@@ -36,9 +36,17 @@ namespace Dungeon.EditorTools
         // ==================================================================
         // Nivel
         // ==================================================================
-        public static void BuildLevel(LevelConfig config, PlayerConfig playerConfig)
+        public static void BuildLevel(int levelNumber)
         {
             Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
+            // Cargar los datos DESPUÉS de crear la escena (ver DataAssetBuilder.LoadLevel).
+            LevelConfig config = DataAssetBuilder.LoadLevel(levelNumber);
+            PlayerConfig playerConfig = DataAssetBuilder.LoadPlayer();
+            if (config == null || playerConfig == null)
+            {
+                Debug.LogError($"[SceneBuilder] Faltan los datos del nivel {levelNumber} o del jugador en Assets/Data.");
+                return;
+            }
             SetupLighting(config);
 
             var environment = new GameObject("Environment").transform;
@@ -355,9 +363,10 @@ namespace Dungeon.EditorTools
         // ==================================================================
         // Menú principal y GameOver
         // ==================================================================
-        public static void BuildMainMenu(PlayerConfig playerConfig)
+        public static void BuildMainMenu()
         {
             Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
+            PlayerConfig playerConfig = DataAssetBuilder.LoadPlayer();
             BuildMenuBackdrop(new Color(0.04f, 0.03f, 0.05f));
 
             Canvas canvas = EditorUtil.CreateScreenCanvas("MenuCanvas");
@@ -393,9 +402,10 @@ namespace Dungeon.EditorTools
             EditorSceneManager.SaveScene(scene, ScenePath(SceneNames.MainMenu));
         }
 
-        public static void BuildGameOver(PlayerConfig playerConfig)
+        public static void BuildGameOver()
         {
             Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
+            PlayerConfig playerConfig = DataAssetBuilder.LoadPlayer();
             var camGo = new GameObject("Main Camera") { tag = "MainCamera" };
             var cam = camGo.AddComponent<Camera>();
             cam.clearFlags = CameraClearFlags.SolidColor;

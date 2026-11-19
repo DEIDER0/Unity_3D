@@ -37,6 +37,7 @@ namespace Dungeon.Controller
 
         public static void StartNewGame(PlayerConfig config, int startLevel = 1)
         {
+            config = PlayerConfig.OrDefault(config, null);
             Session = new GameSession(config.CreateState(), SceneNames.LevelCount, startLevel);
         }
 

@@ -53,6 +53,7 @@ namespace Dungeon.Controller
 
         private void Awake()
         {
+            config = PlayerConfig.OrDefault(config, this);
             _body = GetComponent<Rigidbody>();
             _body.freezeRotation = true;
             _body.interpolation = RigidbodyInterpolation.Interpolate;

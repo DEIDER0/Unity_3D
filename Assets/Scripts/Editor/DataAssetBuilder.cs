@@ -26,7 +26,7 @@ namespace Dungeon.EditorTools
             EditorUtil.EnsureFolder(DataFolder);
             var data = new GameData
             {
-                Player = LoadOrCreate<PlayerConfig>($"{DataFolder}/PlayerConfig.asset", p => { }),
+                Player = LoadOrCreate<PlayerConfig>(PlayerPath, p => { }),
                 Levels = new[]
                 {
                     // ---------------- NIVEL 1 ----------------
@@ -93,6 +93,15 @@ namespace Dungeon.EditorTools
             AssetDatabase.CreateAsset(asset, path);
             return asset;
         }
+
+        public static string PlayerPath => $"{DataFolder}/PlayerConfig.asset";
+        public static string LevelPath(int number) => $"{DataFolder}/Level{number}/Level{number}.asset";
+
+        // OJO: EditorSceneManager.NewScene descarga de memoria los assets que nadie usa, y las
+        // referencias que teníamos guardadas quedan inválidas. Por eso las escenas cargan los datos
+        // por su ruta DESPUÉS de crear la escena nueva.
+        public static PlayerConfig LoadPlayer() => AssetDatabase.LoadAssetAtPath<PlayerConfig>(PlayerPath);
+        public static LevelConfig LoadLevel(int number) => AssetDatabase.LoadAssetAtPath<LevelConfig>(LevelPath(number));
 
         /// <summary>Asigna a cada nivel el prefab de su jefe (si todavía no tiene).</summary>
         public static void AssignBossPrefabs(GameData data, GameObject[] bossPrefabs)

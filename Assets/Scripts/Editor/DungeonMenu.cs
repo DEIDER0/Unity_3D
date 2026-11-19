@@ -58,16 +58,16 @@ namespace Dungeon.EditorTools
         private static void BuildScenes(DataAssetBuilder.GameData data)
         {
             EditorUtility.DisplayProgressBar("Dungeon", "Creando menú principal...", 0.5f);
-            SceneBuilder.BuildMainMenu(data.Player);
+            SceneBuilder.BuildMainMenu();
 
-            for (int i = 0; i < data.Levels.Length; i++)
+            for (int i = 0; i < SceneNames.LevelCount; i++)
             {
                 EditorUtility.DisplayProgressBar("Dungeon", $"Creando Nivel {i + 1}...", 0.55f + 0.1f * i);
-                SceneBuilder.BuildLevel(data.Levels[i], data.Player);
+                SceneBuilder.BuildLevel(i + 1);
             }
 
             EditorUtility.DisplayProgressBar("Dungeon", "Creando GameOver...", 0.9f);
-            SceneBuilder.BuildGameOver(data.Player);
+            SceneBuilder.BuildGameOver();
             SceneBuilder.RegisterBuildScenes();
             AssetDatabase.SaveAssets();
         }

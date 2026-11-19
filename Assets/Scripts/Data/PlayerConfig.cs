@@ -33,5 +33,20 @@ namespace Dungeon.Data
         [Min(0.1f)] public float dodgeCooldown = 0.8f;
 
         public PlayerState CreateState() => new PlayerState(maxHealth, baseDamage);
+
+        /// <summary>
+        /// Devuelve 'config' o, si falta la referencia (no se asignó en el Inspector),
+        /// una configuración con los valores por defecto, y lo avisa en la consola.
+        /// </summary>
+        public static PlayerConfig OrDefault(PlayerConfig config, Object context)
+        {
+            if (config != null) return config;
+            Debug.LogWarning("[Dungeon] Falta asignar PlayerConfig; se usan los valores por defecto. " +
+                             "Asigna Assets/Data/PlayerConfig.asset en el Inspector o ejecuta Dungeon > Build Everything.", context);
+            if (_fallback == null) _fallback = CreateInstance<PlayerConfig>();
+            return _fallback;
+        }
+
+        private static PlayerConfig _fallback;
     }
 }
