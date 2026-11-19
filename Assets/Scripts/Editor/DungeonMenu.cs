@@ -70,6 +70,9 @@ namespace Dungeon.EditorTools
             SceneBuilder.BuildGameOver();
             SceneBuilder.RegisterBuildScenes();
             AssetDatabase.SaveAssets();
+
+            EditorUtility.DisplayProgressBar("Dungeon", "Verificando referencias...", 0.95f);
+            SceneReferenceFixer.FixAll();
         }
     }
 }

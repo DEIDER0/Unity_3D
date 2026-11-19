@@ -43,6 +43,13 @@ namespace Dungeon.Controller
 
         private void Start()
         {
+            if (levelConfig == null || player == null)
+            {
+                Debug.LogError("[Dungeon] GameController no tiene asignado Level Config o Player. " +
+                               "Ejecuta el menú Dungeon > Fix Scene References (o Build Everything).", this);
+                return;
+            }
+
             // Si se abre un nivel directamente desde el Editor, se crea una partida que empieza en él.
             if (Session == null || Session.IsOver || Session.CurrentLevel != levelConfig.levelNumber)
                 StartNewGame(playerConfig, levelConfig.levelNumber);

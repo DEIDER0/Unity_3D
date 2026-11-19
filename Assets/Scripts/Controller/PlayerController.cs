@@ -69,6 +69,15 @@ namespace Dungeon.Controller
         }
 
         private void OnEnable() => _map?.Enable();
+
+        private IEnumerator Start()
+        {
+            // Diagnóstico: si a los 2 s nadie inicializó al jugador, el GameController falló.
+            yield return new WaitForSeconds(2f);
+            if (State == null)
+                Debug.LogError("[Dungeon] El jugador no fue inicializado (por eso no se mueve). " +
+                               "Revisa el error anterior del GameController.", this);
+        }
         private void OnDisable() => _map?.Disable();
 
         private void OnDestroy()
