@@ -476,8 +476,8 @@ namespace Dungeon.EditorTools
             var go = new GameObject("EventSystem");
             var eventSystem = go.AddComponent<EventSystem>();
             eventSystem.firstSelectedGameObject = firstSelected;
-            var module = go.AddComponent<InputSystemUIInputModule>();
-            module.AssignDefaultActions();
+            // Sin asignar acciones a mano: al activarse, el módulo usa las acciones de UI por defecto del Input System.
+            go.AddComponent<InputSystemUIInputModule>();
         }
 
         // ==================================================================
