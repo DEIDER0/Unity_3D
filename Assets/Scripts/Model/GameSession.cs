@@ -24,11 +24,14 @@ namespace Dungeon.Model
         public bool IsOver { get; private set; }
         public bool IsVictory { get; private set; }
 
-        public GameSession(PlayerState player, int totalLevels = DefaultTotalLevels)
+        /// <param name="startLevel">Nivel inicial (normalmente 1; otro valor sirve para probar un nivel suelto).</param>
+        public GameSession(PlayerState player, int totalLevels = DefaultTotalLevels, int startLevel = 1)
         {
             Player = player ?? throw new ArgumentNullException(nameof(player));
             if (totalLevels <= 0) throw new ArgumentOutOfRangeException(nameof(totalLevels));
+            if (startLevel < 1 || startLevel > totalLevels) throw new ArgumentOutOfRangeException(nameof(startLevel));
             TotalLevels = totalLevels;
+            CurrentLevel = startLevel;
             Player.Died += OnPlayerDied;
         }
 

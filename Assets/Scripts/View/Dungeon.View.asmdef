@@ -3,7 +3,6 @@
     "rootNamespace": "Dungeon.View",
     "references": [
         "Dungeon.Model",
-        "Unity.TextMeshPro",
         "UnityEngine.UI"
     ],
     "includePlatforms": [],

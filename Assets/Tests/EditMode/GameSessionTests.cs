@@ -71,6 +71,18 @@ namespace Dungeon.Tests
         }
 
         [Test]
+        public void CanStartOnAnotherLevel_ForTesting()
+        {
+            var session = new GameSession(new PlayerState(100, 10), startLevel: 3);
+            bool victory = false;
+            session.Victory += () => victory = true;
+
+            session.CompleteLevel(3);
+
+            Assert.IsTrue(victory);
+        }
+
+        [Test]
         public void CreateCurrentLevel_UsesCurrentLevelNumber()
         {
             var session = new GameSession(new PlayerState(100, 10));

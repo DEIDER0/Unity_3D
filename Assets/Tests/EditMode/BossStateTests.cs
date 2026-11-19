@@ -52,6 +52,23 @@ namespace Dungeon.Tests
         }
 
         [Test]
+        public void SpecialDamage_UsesConfiguredValue_AndScalesWithEnrage()
+        {
+            var boss = new BossState("Rey Esqueleto", 100, 10, 0.5f, 1.5f, specialDamage: 20);
+            Assert.AreEqual(20, boss.SpecialDamage);
+
+            boss.TakeDamage(60);
+
+            Assert.AreEqual(30, boss.SpecialDamage);
+        }
+
+        [Test]
+        public void SpecialDamage_DefaultsToTwiceNormalDamage()
+        {
+            Assert.AreEqual(24, new BossState("X", 100, 12).SpecialDamage);
+        }
+
+        [Test]
         public void Constructor_RejectsInvalidThreshold()
         {
             Assert.Throws<ArgumentOutOfRangeException>(() => new BossState("X", 100, 10, enrageThreshold: 1.2f));

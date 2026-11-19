@@ -2,7 +2,14 @@
     "name": "Dungeon.Editor",
     "rootNamespace": "Dungeon.EditorTools",
     "references": [
-        "Dungeon.Model"
+        "Dungeon.Model",
+        "Dungeon.Data",
+        "Dungeon.View",
+        "Dungeon.Controller",
+        "Unity.InputSystem",
+        "UnityEngine.UI",
+        "Unity.RenderPipelines.Core.Runtime",
+        "Unity.RenderPipelines.Universal.Runtime"
     ],
     "includePlatforms": [
         "Editor"

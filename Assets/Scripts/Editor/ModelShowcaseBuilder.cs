@@ -19,7 +19,7 @@ namespace Dungeon.EditorTools
         {
             if (!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
 
-            PrefabBuilder.BuildAll();
+            PrefabBuilder.BuildAll(DataAssetBuilder.EnsureAll().Player);
             var scene = EditorSceneManager.NewScene(NewSceneSetup.DefaultGameObjects, NewSceneMode.Single);
 
             // Piso: rejilla de baldosas de 4 m

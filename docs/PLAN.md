@@ -1,4 +1,4 @@
-# Plan del proyecto — Dungeon Depths (nombre provisional)
+# Plan del proyecto: Dungeon Depths
 
 Dungeon crawler 3D de acción, cuerpo a cuerpo, para PC. Unity **6000.3.21f1** + URP.
 Asignatura: Tecnologías Inmersivas.
@@ -30,13 +30,13 @@ Dependencias en un solo sentido, impuestas por las asmdef:
 | 0 | Base del proyecto: paquetes, carpetas, asmdefs y acciones de entrada | ✅ |
 | a | Modelo y pruebas unitarias | ✅ |
 | b | Modelos 3D en Blender (bpy), exportación a FBX e importación | ✅ |
-| c | Jugador: movimiento, ataque y esquive | ⏳ |
-| d | Enemigo básico con IA | |
-| e | Salas, puertas y RoomController | |
-| f | Cofre y recompensa | |
-| g | Jefe | |
-| h | HUD, menú principal y GameOver | |
-| i | Niveles 2 y 3 (solo datos) | |
+| c | Jugador: movimiento, ataque y esquive | ✅ |
+| d | Enemigo básico con IA | ✅ |
+| e | Salas, puertas y RoomController | ✅ |
+| f | Cofre y recompensa | ✅ |
+| g | Jefe | ✅ |
+| h | HUD, menú principal y GameOver | ✅ |
+| i | Niveles 2 y 3 (solo datos) | ✅ |
 
 ## Fuera de alcance
 Multijugador, guardado de partida, generación aleatoria de salas, inventario complejo.
@@ -45,3 +45,9 @@ Multijugador, guardado de partida, generación aleatoria de salas, inventario co
 Generados con `BlenderScripts/` (ver `BlenderScripts/LEEME.md`).
 
 ![Modelos](previews/_todos.png)
+
+## Notas de implementación
+* **Animaciones:** los modelos no tienen esqueleto. `CharacterView` anima por código los pivotes `Visual` y `WeaponPivot` (balanceo al caminar, golpe, voltereta, caída); `ChestView` rota la tapa y `DoorView` hunde la puerta. Por eso no se usa un componente Animator.
+* **Sonido:** `SfxPlayer` sintetiza efectos placeholder por código. No hay archivos de audio.
+* **UI:** usa el texto clásico de uGUI (`UnityEngine.UI.Text`), así no hace falta importar los recursos de TextMeshPro.
+* **Escenas y prefabs:** los genera `Dungeon > Build Everything`. Los números del juego viven en `Assets/Data`, que el menú no sobrescribe.
