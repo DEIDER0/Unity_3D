@@ -20,7 +20,7 @@ namespace Dungeon.EditorTools
     ///       └── WeaponPivot (pivote en la mano; el arma cuelga de aquí)
     ///
     /// OJO: volver a ejecutar el menú SOBRESCRIBE los prefabs. Los cambios permanentes van en este script
-    /// (los números del juego van en los assets de Assets/Data, que no se sobrescriben).
+    /// (los números del juego van en los assets de Assets/Resources/Data, que no se sobrescriben).
     /// </summary>
     public static class PrefabBuilder
     {

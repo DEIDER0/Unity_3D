@@ -15,12 +15,12 @@ El jugador recorre una mazmorra de **3 niveles**. Cada nivel tiene 3 salas en l�
 2. Si Unity pregunta si quieres activar el nuevo Input System (*enable the new input system backends*), responde **Yes**. El Editor se reinicia.
 3. En el menú superior, ejecuta **Dungeon → Build Everything**. En un solo paso:
    * configura URP, si falta;
-   * crea los datos de los 3 niveles en `Assets/Data`;
+   * crea los datos de los 3 niveles en `Assets/Resources/Data`;
    * crea los prefabs en `Assets/Prefabs`;
    * crea las escenas `MenuPrincipal`, `Nivel1`, `Nivel2`, `Nivel3` y `GameOver` y las agrega a Build Settings.
 4. Se abre la escena **MenuPrincipal**. Pulsa **Play**.
 
-> Hagan el paso 3 **una sola vez**, en el PC de una sola persona. Esa persona hace commit de lo generado (`Assets/Data`, `Assets/Prefabs`, `Assets/Scenes`, `Assets/Settings`, `Assets/Materials`, `ProjectSettings`, `Packages/packages-lock.json` y todos los `.meta`). Los demás solo descargan.
+> Hagan el paso 3 **una sola vez**, en el PC de una sola persona. Esa persona hace commit de lo generado (`Assets/Resources/Data`, `Assets/Prefabs`, `Assets/Scenes`, `Assets/Settings`, `Assets/Materials`, `ProjectSettings`, `Packages/packages-lock.json` y todos los `.meta`). Los demás solo descargan.
 
 ### Controles
 | Acción | Tecla |
@@ -43,7 +43,7 @@ El jugador recorre una mazmorra de **3 niveles**. Cada nivel tiene 3 salas en l�
 | 2 · Las Cavernas de Cristal | 3 / 1 / 0 | Amuleto de vida (vida máxima +40) | Gólem de Cristal |
 | 3 · El Abismo Ardiente | 3 / 2 / 1 | Elixir del héroe (+100 de vida) | Malakor, el Demonio |
 
-Para cambiar la dificultad, edita los assets de `Assets/Data` en el Inspector y vuelve a ejecutar **Dungeon → Rebuild Scenes Only**, que reparte los enemigos según `enemiesPerRoom`. La vida, el daño y la velocidad no necesitan reconstruir escenas.
+Para cambiar la dificultad, edita los assets de `Assets/Resources/Data` en el Inspector y vuelve a ejecutar **Dungeon → Rebuild Scenes Only**, que reparte los enemigos según `enemiesPerRoom`. La vida, el daño y la velocidad no necesitan reconstruir escenas.
 
 ---
 

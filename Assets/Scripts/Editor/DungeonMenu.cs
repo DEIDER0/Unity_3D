@@ -8,7 +8,7 @@ namespace Dungeon.EditorTools
     /// <summary>
     /// EDITOR. Menú principal de automatización. Dungeon > Build Everything hace TODO en orden:
     ///   1. Configura URP (si falta).
-    ///   2. Crea los datos de los 3 niveles (Assets/Data) si no existen.
+    ///   2. Crea los datos de los 3 niveles (Assets/Resources/Data) si no existen.
     ///   3. Crea los prefabs (Assets/Prefabs).
     ///   4. Crea las escenas MenuPrincipal, Nivel1-3 y GameOver y las agrega a Build Settings.
     /// </summary>

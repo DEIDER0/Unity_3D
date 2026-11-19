@@ -50,4 +50,4 @@ Generados con `BlenderScripts/` (ver `BlenderScripts/LEEME.md`).
 * **Animaciones:** los modelos no tienen esqueleto. `CharacterView` anima por código los pivotes `Visual` y `WeaponPivot` (balanceo al caminar, golpe, voltereta, caída); `ChestView` rota la tapa y `DoorView` hunde la puerta. Por eso no se usa un componente Animator.
 * **Sonido:** `SfxPlayer` sintetiza efectos placeholder por código. No hay archivos de audio.
 * **UI:** usa el texto clásico de uGUI (`UnityEngine.UI.Text`), así no hace falta importar los recursos de TextMeshPro.
-* **Escenas y prefabs:** los genera `Dungeon > Build Everything`. Los números del juego viven en `Assets/Data`, que el menú no sobrescribe.
+* **Escenas y prefabs:** los genera `Dungeon > Build Everything`. Los números del juego viven en `Assets/Resources/Data`, que el menú no sobrescribe.

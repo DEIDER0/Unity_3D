@@ -41,12 +41,17 @@ namespace Dungeon.Data
         public static PlayerConfig OrDefault(PlayerConfig config, Object context)
         {
             if (config != null) return config;
+            var fromResources = Resources.Load<PlayerConfig>(ResourcesPath);
+            if (fromResources != null) return fromResources;
             Debug.LogWarning("[Dungeon] Falta asignar PlayerConfig; se usan los valores por defecto. " +
-                             "Asigna Assets/Data/PlayerConfig.asset en el Inspector o ejecuta Dungeon > Build Everything.", context);
+                             "Asigna Assets/Resources/Data/PlayerConfig.asset en el Inspector o ejecuta Dungeon > Build Everything.", context);
             if (_fallback == null) _fallback = CreateInstance<PlayerConfig>();
             return _fallback;
         }
 
         private static PlayerConfig _fallback;
+
+        /// <summary>Ruta dentro de Assets/Resources (Assets/Resources/Data/PlayerConfig.asset).</summary>
+        public const string ResourcesPath = "Data/PlayerConfig";
     }
 }

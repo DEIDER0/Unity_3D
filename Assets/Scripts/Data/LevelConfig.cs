@@ -29,5 +29,9 @@ namespace Dungeon.Data
         public Color torchColor = new Color(1f, 0.62f, 0.3f);
         public Color ambientColor = new Color(0.16f, 0.15f, 0.2f);
         public Color fogColor = new Color(0.05f, 0.04f, 0.06f);
+
+        /// <summary>Carga Assets/Resources/Data/LevelN/LevelN.asset (respaldo si falta la referencia).</summary>
+        public static LevelConfig LoadFromResources(int levelNumber) =>
+            Resources.Load<LevelConfig>($"Data/Level{levelNumber}/Level{levelNumber}");
     }
 }

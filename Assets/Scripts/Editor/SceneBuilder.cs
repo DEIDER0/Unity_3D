@@ -44,7 +44,7 @@ namespace Dungeon.EditorTools
             PlayerConfig playerConfig = DataAssetBuilder.LoadPlayer();
             if (config == null || playerConfig == null)
             {
-                Debug.LogError($"[SceneBuilder] Faltan los datos del nivel {levelNumber} o del jugador en Assets/Data.");
+                Debug.LogError($"[SceneBuilder] Faltan los datos del nivel {levelNumber} o del jugador en Assets/Resources/Data.");
                 return;
             }
             SetupLighting(config);

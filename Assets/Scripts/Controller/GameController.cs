@@ -43,10 +43,12 @@ namespace Dungeon.Controller
 
         private void Start()
         {
+            if (levelConfig == null) levelConfig = LoadLevelForThisScene();
+            playerConfig = PlayerConfig.OrDefault(playerConfig, this);
             if (levelConfig == null || player == null)
             {
                 Debug.LogError("[Dungeon] GameController no tiene asignado Level Config o Player. " +
-                               "Ejecuta el menú Dungeon > Fix Scene References (o Build Everything).", this);
+                               "Ejecuta el menú Dungeon > Build Everything.", this);
                 return;
             }
 
@@ -80,6 +82,18 @@ namespace Dungeon.Controller
                 Session.Victory -= OnVictory;
                 Session.Defeat -= OnDefeat;
             }
+        }
+
+        /// <summary>Respaldo: deduce el número de nivel del nombre de la escena (Nivel2 → 2) y carga sus datos.</summary>
+        private LevelConfig LoadLevelForThisScene()
+        {
+            string sceneName = SceneManager.GetActiveScene().name;
+            string digits = System.Text.RegularExpressions.Regex.Match(sceneName, @"\d+").Value;
+            if (!int.TryParse(digits, out int number)) return null;
+            var config = LevelConfig.LoadFromResources(number);
+            if (config != null)
+                Debug.Log($"[Dungeon] Level Config no estaba asignado; se cargó Level{number} desde Resources.", this);
+            return config;
         }
 
         private int[] CountEnemiesPerRoom()

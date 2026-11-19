@@ -7,13 +7,13 @@ using UnityEngine;
 namespace Dungeon.EditorTools
 {
     /// <summary>
-    /// EDITOR. Crea los ScriptableObjects con los datos del juego (Assets/Data).
+    /// EDITOR. Crea los ScriptableObjects con los datos del juego (Assets/Resources/Data).
     /// Solo los crea si NO existen: si el equipo cambia valores en el Inspector, se respetan.
     /// Los niveles 2 y 3 reutilizan todo el código; solo cambian estos datos.
     /// </summary>
     public static class DataAssetBuilder
     {
-        public const string DataFolder = "Assets/Data";
+        public const string DataFolder = "Assets/Resources/Data"; // en Resources: el juego puede cargarlos aunque falte una referencia
 
         public sealed class GameData
         {
