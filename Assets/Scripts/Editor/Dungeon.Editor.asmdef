@@ -1,0 +1,24 @@
+{
+    "name": "Dungeon.Editor",
+    "rootNamespace": "Dungeon.EditorTools",
+    "references": [
+        "Dungeon.Model",
+        "Dungeon.Data",
+        "Dungeon.View",
+        "Dungeon.Controller",
+        "Unity.InputSystem",
+        "Unity.TextMeshPro",
+        "UnityEngine.UI"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

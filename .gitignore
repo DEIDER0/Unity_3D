@@ -1,0 +1,43 @@
+# --- Unity ---
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+/Assets/Plugins/Editor/JetBrains*
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+sysinfo.txt
+crashlytics-buildid.txt
+*.apk
+*.aab
+*.unitypackage
+*.app
+
+# --- IDEs ---
+.vs/
+.vscode/
+.idea/
+*.csproj
+*.sln
+*.suo
+*.user
+*.userprefs
+
+# --- Pruebas del Modelo fuera de Unity (dotnet) ---
+/Tools/ModelTests/bin/
+/Tools/ModelTests/obj/
+
+# --- Blender / Python ---
+__pycache__/
+*.blend1
+*.pyc
+
+# --- Sistema operativo ---
+.DS_Store
+Thumbs.db

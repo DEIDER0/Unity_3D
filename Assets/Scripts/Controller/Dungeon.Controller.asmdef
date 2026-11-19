@@ -1,0 +1,19 @@
+{
+    "name": "Dungeon.Controller",
+    "rootNamespace": "Dungeon.Controller",
+    "references": [
+        "Dungeon.Model",
+        "Dungeon.Data",
+        "Dungeon.View",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
