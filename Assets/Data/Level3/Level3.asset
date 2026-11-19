@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11cb74da90d94ab59e28a4265f95625c, type: 3}
+  m_Name: Level3
+  m_EditorClassIdentifier: Dungeon.Data::Dungeon.Data.LevelConfig
+  levelNumber: 3
+  displayName: El Abismo Ardiente
+  enemy: {fileID: 11400000, guid: 30a671d3f4976ad41979ba2dce97be66, type: 2}
+  enemiesPerRoom: 030000000200000001000000
+  chestItem: {fileID: 11400000, guid: 2182f2cc284700d49ad44694ad9c985f, type: 2}
+  boss: {fileID: 11400000, guid: e434cc77f55845b4cbbf1e7af3a64b76, type: 2}
+  bossPrefab: {fileID: 8027948795557988176, guid: a81068d6a23cc654491af35b5862086d, type: 3}
+  torchColor: {r: 1, g: 0.35, b: 0.2, a: 1}
+  ambientColor: {r: 0.2, g: 0.1, b: 0.1, a: 1}
+  fogColor: {r: 0.08, g: 0.02, b: 0.02, a: 1}

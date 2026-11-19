@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11cb74da90d94ab59e28a4265f95625c, type: 3}
+  m_Name: Level1
+  m_EditorClassIdentifier: Dungeon.Data::Dungeon.Data.LevelConfig
+  levelNumber: 1
+  displayName: Las Catacumbas
+  enemy: {fileID: 11400000, guid: 57d2298c0512090438aae15045583c95, type: 2}
+  enemiesPerRoom: 020000000000000000000000
+  chestItem: {fileID: 11400000, guid: c93cb003e99bbe841a9aa8ec4906b984, type: 2}
+  boss: {fileID: 11400000, guid: cf28b2b3bd037e245a6c8a9bfbd51151, type: 2}
+  bossPrefab: {fileID: 6884868988148336498, guid: 8fbb8c951afb1be45a0b7a6e84cbcb00, type: 3}
+  torchColor: {r: 1, g: 0.62, b: 0.3, a: 1}
+  ambientColor: {r: 0.17, g: 0.15, b: 0.2, a: 1}
+  fogColor: {r: 0.05, g: 0.04, b: 0.06, a: 1}
